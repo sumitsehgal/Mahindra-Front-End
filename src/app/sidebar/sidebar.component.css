@@ -1,0 +1,9 @@
+.sidebar{
+    border: 2px solid #00a;
+}
+
+.sidebar a{
+    color:#000;
+    background-color: #343a40;
+    border: 2px solid #ccc;
+}
