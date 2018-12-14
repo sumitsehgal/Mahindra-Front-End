@@ -10,7 +10,9 @@ import { LocalStorageService } from './local-storage.service';
 export class ApiServiceService {
 
   static readonly CLIENT_SECRET = 'PJf6OCsTlG5fvMYA9uti3eSPow9dqQvPMLhR9FFx';
-  static readonly BASE_URL = 'http://mahindralocal.com/';
+  // static readonly BASE_URL = 'http://mahindralocal.com/';
+  static readonly BASE_URL = 'http://mahindra.core2creations.com/';
+
   currentUser = false;
 
 

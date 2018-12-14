@@ -1,3 +1,4 @@
+import { ApiServiceService } from './../api-service.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './../local-storage.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private routes: Router, private local: LocalStorageService) { }
+  constructor(private routes: Router, private local: LocalStorageService, private api: ApiServiceService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.local.removeStorage('tokenObject');
     if (!this.local.getStorage('tokenObject')) {
+      this.api.currentUser = false;
       this.routes.navigate(['/login']).then(nav => {
         console.log(nav); // true if navigation is successful
       }, err => {
